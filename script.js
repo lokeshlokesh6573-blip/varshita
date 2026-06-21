@@ -1,9 +1,15 @@
-// Wait for DOM to load
+// Varshita's Portfolio - Professional Interactions
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Typing Animation
     const typingText = document.getElementById('typingText');
-    const professions = ['Computer Science Student', 'Aspiring Web Developer', 'Tech Enthusiast'];
+    const professions = [
+        'Computer Science Student', 
+        'Web Developer', 
+        'Python Programmer', 
+        'Problem Solver'
+    ];
     let profIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -24,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isDeleting && charIndex === currentProf.length) {
             isDeleting = true;
-            typeSpeed = 2000; // Pause at end
+            typeSpeed = 2000;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             profIndex = (profIndex + 1) % professions.length;
@@ -35,122 +41,92 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     type();
 
-    // 2. Sticky Navbar & Scroll Progress
+    // 2. Scroll Progress & Sticky Navbar
     const navbar = document.getElementById('navbar');
     const scrollProgress = document.getElementById('scrollProgress');
     const backToTop = document.getElementById('backToTop');
 
     window.addEventListener('scroll', () => {
-        // Sticky Navbar
-        if (window.scrollY > 50) {
+        // Sticky Navbar logic
+        if (window.scrollY > 100) {
             navbar.classList.add('sticky');
         } else {
             navbar.classList.remove('sticky');
         }
 
-        // Scroll Progress
+        // Scroll Progress logic
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         scrollProgress.style.width = scrolled + "%";
 
-        // Back to Top Button
-        if (window.scrollY > 500) {
+        // Back to top appearance
+        if (window.scrollY > 600) {
             backToTop.classList.add('active');
         } else {
             backToTop.classList.remove('active');
         }
-
-        // Active Link Highlighting
-        highlightNavLink();
     });
 
-    // 3. Mobile Menu Toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    
-    menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = menuBtn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const icon = menuBtn.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        });
-    });
-
-    // 4. Reveal Animations (Intersection Observer)
+    // 3. Reveal Animations (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                // If it contains a counter, trigger it
+                const counter = entry.target.querySelector('.counter');
+                if (counter) animateCounter(counter);
             }
         });
     }, { threshold: 0.1 });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // 5. Active Link Highlighting
-    function highlightNavLink() {
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.nav-links a');
-        
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop - 150) {
-                current = section.getAttribute('id');
-            }
-        });
+    // 4. Counter Animation
+    function animateCounter(counter) {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const speed = target / 200;
 
-        navItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('href').includes(current)) {
-                item.classList.add('active');
-            }
-        });
+        if (count < target) {
+            counter.innerText = Math.ceil(count + speed);
+            setTimeout(() => animateCounter(counter), 10);
+        } else {
+            counter.innerText = target + "+";
+        }
     }
 
-    // 6. Form Validation & Handling (Mock)
-    const contactForm = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Simple visual feedback
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-            alert('Thank you, Varshita will get back to you soon!');
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            contactForm.reset();
-        }, 1500);
-    });
-
-    // 7. Smooth Scrolling for all internal links
+    // 5. Smooth Scroll for Navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 window.scrollTo({
-                    top: target.offsetTop - 70,
+                    top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
             }
         });
     });
+
+    // 6. Form Submission (Mock Feedback)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Message Sent!';
+            btn.style.background = '#059669'; // Green success
+            contactForm.reset();
+
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = '';
+            }, 3000);
+        });
+    }
 });
