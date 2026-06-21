@@ -15,18 +15,23 @@
 
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="#" class="logo">Varshita.</a>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Let's Talk</a>
+        <div class="container nav-container">
+            <a href="#" class="logo">Varshita.</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-nav">Let's Talk</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -34,46 +39,69 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-main">
-                <div class="hero-text reveal">
-                    <span class="hero-label">Available for Internship & Projects</span>
-                    <h1>Varshita <br><span class="text-highlight">Seetamraju</span></h1>
-                    <div class="typing-container" id="typingText"></div>
-                    <p class="hero-desc">Computer Science student at JBIET crafting high-end web experiences with Python and modern Javascript. Focused on building clean, functional, and user-centric applications.</p>
-                    <div class="hero-btns">
-                        <a href="#projects" class="btn btn-primary">Featured Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            <div class="hero-content">
+                <div class="hero-main">
+                    <div class="hero-text reveal">
+                        <div class="availability-badge">
+                            <span class="dot"></span> Available for Internships
+                        </div>
+                        <h1>Varshita <br><span class="text-highlight">Seetamraju</span></h1>
+                        <div class="typing-wrapper">
+                            <span class="typing-container" id="typingText"></span><span class="cursor">|</span>
+                        </div>
+                        <p class="hero-desc">Computer Science student at JBIET crafting premium web experiences. I blend technical logic with creative design to build impactful digital solutions.</p>
+                        <div class="hero-btns">
+                            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        </div>
                     </div>
-                    <div class="hero-socials">
-                        <a href="https://www.linkedin.com/in/varshita-seetamraju-b10456364" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:snvarshita18@gmail.com" title="Email"><i class="far fa-envelope"></i></a>
-                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <div class="hero-visual reveal">
+                        <div class="profile-container">
+                            <div class="glow-bg"></div>
+                            <div class="ring-1"></div>
+                            <div class="ring-2"></div>
+                            <div class="profile-img-wrapper">
+                                <img src="profile.jpg" alt="Varshita" class="profile-img">
+                            </div>
+                            <!-- Floating Badges -->
+                            <div class="floating-badge badge-js">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="floating-badge badge-py">
+                                <i class="fab fa-python"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-visual reveal">
-                    <div class="profile-img-wrapper">
-                        <img src="profile.jpg" alt="Varshita" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400?text=Varshita'">
-                    </div>
-                    <!-- Stat Cards -->
-                    <div class="stat-card stat-1">
-                        <i class="fas fa-code-branch"></i>
-                        <div class="stat-info">
-                            <h4 class="counter" data-target="10">0</h4>
-                            <p>Skills Mastered</p>
+
+                <!-- Highlight Cards -->
+                <div class="highlight-grid reveal">
+                    <div class="h-card">
+                        <div class="h-icon">📂</div>
+                        <div class="h-info">
+                            <h4>Projects</h4>
+                            <p>Built with Purpose</p>
                         </div>
                     </div>
-                    <div class="stat-card stat-2">
-                        <i class="fas fa-graduation-cap"></i>
-                        <div class="stat-info">
-                            <h4>3rd Year</h4>
-                            <p>B.Tech Student</p>
+                    <div class="h-card">
+                        <div class="h-icon">💻</div>
+                        <div class="h-info">
+                            <h4>Technologies</h4>
+                            <p>Modern Stack</p>
                         </div>
                     </div>
-                    <div class="stat-card stat-3">
-                        <i class="fas fa-laptop-code"></i>
-                        <div class="stat-info">
-                            <h4>Web Dev</h4>
-                            <p>Specialization</p>
+                    <div class="h-card">
+                        <div class="h-icon">🎓</div>
+                        <div class="h-info">
+                            <h4>3rd Year CSE</h4>
+                            <p>JBIET Hyderabad</p>
+                        </div>
+                    </div>
+                    <div class="h-card">
+                        <div class="h-icon">🚀</div>
+                        <div class="h-info">
+                            <h4>AI & Web</h4>
+                            <p>Continuous Learning</p>
                         </div>
                     </div>
                 </div>
@@ -84,29 +112,34 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-header reveal">
-                <h2>About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text reveal">
-                    <p>I am a passionate Computer Science student interested in web development and emerging technologies. I enjoy building responsive websites, learning modern programming technologies, and working on innovative projects.</p>
-                    <p>Currently pursuing my 3rd year of B.Tech in Computer Science and Engineering at J.B. Institute of Engineering and Technology (JBIET). I am continuously improving my technical knowledge while building real-world projects that strengthen my development skills.</p>
+            <div class="about-grid reveal">
+                <div class="about-visual">
+                    <div class="about-img-frame">
+                        <img src="profile.jpg" alt="About Varshita" class="about-img">
+                    </div>
                 </div>
-                <div class="highlight-cards reveal">
-                    <div class="glass-card">
-                        <i class="fas fa-bullseye"></i>
-                        <h4>🎯 Goal-Oriented</h4>
-                        <p>Focused on building practical and impactful software solutions.</p>
+                <div class="about-content">
+                    <div class="section-header left">
+                        <span class="sub-title">Get to Know Me</span>
+                        <h2>About Me</h2>
                     </div>
-                    <div class="glass-card">
-                        <i class="fas fa-rocket"></i>
-                        <h4>🚀 Fast Learner</h4>
-                        <p>Quickly adapts to new technologies and frameworks.</p>
-                    </div>
-                    <div class="glass-card">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>💡 Creative Thinker</h4>
-                        <p>Transforms ideas into elegant digital experiences.</p>
+                    <p>I am a passionate Computer Science student interested in web development and emerging technologies. I enjoy building responsive websites, learning modern programming technologies, and working on innovative projects.</p>
+                    <p>Currently pursuing my 3rd year of B.Tech in CSE at JBIET. I am continuously improving my technical knowledge while building real-world projects that strengthen my development skills.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="f-icon">🎯</div>
+                            <div>
+                                <h4>Goal-Oriented</h4>
+                                <p>Building practical software solutions.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="f-icon">🚀</div>
+                            <div>
+                                <h4>Fast Learner</h4>
+                                <p>Adapting to new frameworks quickly.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -117,42 +150,54 @@
     <section class="education" id="education">
         <div class="container">
             <div class="section-header reveal">
+                <span class="sub-title">Academic Journey</span>
                 <h2>Education</h2>
             </div>
             <div class="edu-grid">
                 <div class="edu-card reveal">
-                    <div class="edu-main">
-                        <h3>B.Tech - CSE</h3>
-                        <p>J.B. Institute of Engineering and Technology</p>
-                        <div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span class="badge">DSA</span>
-                            <span class="badge">Algorithms</span>
-                            <span class="badge">OOP</span>
-                            <span class="badge">AI</span>
-                            <span class="badge">Web Tech</span>
+                    <div class="edu-header">
+                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="edu-title">
+                            <h3>B.Tech - CSE</h3>
+                            <p>J.B. Institute of Engineering and Technology</p>
                         </div>
+                        <div class="edu-badge current">Current Year</div>
                     </div>
-                    <div class="edu-meta">
-                        <span class="badge">2022 - 2026</span>
-                        <p style="margin-top: 8px;">3rd Year</p>
-                    </div>
-                </div>
-                <div class="edu-card reveal">
-                    <div class="edu-main">
-                        <h3>Intermediate</h3>
-                        <p>Resonance Junior College</p>
-                    </div>
-                    <div class="edu-meta">
-                        <span class="badge">2020 - 2022</span>
+                    <div class="edu-body">
+                        <div class="subject-chips">
+                            <span>DSA</span>
+                            <span>Algorithms</span>
+                            <span>OOP</span>
+                            <span>AI</span>
+                            <span>Web Tech</span>
+                        </div>
+                        <div class="edu-year">2022 - 2026</div>
                     </div>
                 </div>
                 <div class="edu-card reveal">
-                    <div class="edu-main">
-                        <h3>SSC</h3>
-                        <p>Geetanjali High School</p>
+                    <div class="edu-header">
+                        <div class="edu-icon"><i class="fas fa-school"></i></div>
+                        <div class="edu-title">
+                            <h3>Intermediate</h3>
+                            <p>Resonance Junior College</p>
+                        </div>
+                        <div class="edu-badge">Completed</div>
                     </div>
-                    <div class="edu-meta">
-                        <span class="badge">Completed 2020</span>
+                    <div class="edu-body">
+                        <div class="edu-year">2020 - 2022</div>
+                    </div>
+                </div>
+                <div class="edu-card reveal">
+                    <div class="edu-header">
+                        <div class="edu-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="edu-title">
+                            <h3>SSC</h3>
+                            <p>Geetanjali High School</p>
+                        </div>
+                        <div class="edu-badge">Completed</div>
+                    </div>
+                    <div class="edu-body">
+                        <div class="edu-year">2020</div>
                     </div>
                 </div>
             </div>
@@ -163,11 +208,15 @@
     <section class="skills" id="skills">
         <div class="container">
             <div class="section-header reveal">
+                <span class="sub-title">Expertise</span>
                 <h2>My Skills</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-category reveal">
-                    <h3>Programming</h3>
+                    <div class="cat-header">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Programming</h3>
+                    </div>
                     <div class="skill-tags">
                         <span class="skill-tag">C</span>
                         <span class="skill-tag">Python</span>
@@ -177,7 +226,10 @@
                     </div>
                 </div>
                 <div class="skill-category reveal">
-                    <h3>Web Development</h3>
+                    <div class="cat-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Web Development</h3>
+                    </div>
                     <div class="skill-tags">
                         <span class="skill-tag">HTML5</span>
                         <span class="skill-tag">CSS3</span>
@@ -186,12 +238,26 @@
                     </div>
                 </div>
                 <div class="skill-category reveal">
-                    <h3>Tools & Soft Skills</h3>
+                    <div class="cat-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools</h3>
+                    </div>
                     <div class="skill-tags">
                         <span class="skill-tag">GitHub</span>
                         <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Vercel</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="cat-header">
+                        <i class="fas fa-user-friends"></i>
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="skill-tags">
                         <span class="skill-tag">Teamwork</span>
                         <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Communication</span>
                     </div>
                 </div>
             </div>

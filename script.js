@@ -1,4 +1,4 @@
-// Varshita's Portfolio - Professional Interactions
+// Varshita's Portfolio - Premium Interactions
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Computer Science Student', 
         'Web Developer', 
         'Python Programmer', 
-        'Problem Solver'
+        'AI Enthusiast'
     ];
     let profIndex = 0;
     let charIndex = 0;
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let typeSpeed = 100;
 
     function type() {
+        if (!typingText) return;
         const currentProf = professions[profIndex];
         
         if (isDeleting) {
@@ -41,77 +42,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     type();
 
-    // 2. Scroll Progress & Sticky Navbar
+    // 2. Navigation - Hamburger & Sticky
     const navbar = document.getElementById('navbar');
-    const scrollProgress = document.getElementById('scrollProgress');
-    const backToTop = document.getElementById('backToTop');
+    const hamburger = document.getElementById('hamburger');
+    const navLinksList = document.getElementById('navLinks');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (hamburger && navLinksList) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinksList.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinksList.classList.remove('active');
+            });
+        });
+    }
 
     window.addEventListener('scroll', () => {
-        // Sticky Navbar logic
-        if (window.scrollY > 100) {
+        // Sticky Navbar
+        if (window.scrollY > 50) {
             navbar.classList.add('sticky');
         } else {
             navbar.classList.remove('sticky');
         }
-
-        // Scroll Progress logic
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        scrollProgress.style.width = scrolled + "%";
-
-        // Back to top appearance
-        if (window.scrollY > 600) {
-            backToTop.classList.add('active');
-        } else {
-            backToTop.classList.remove('active');
-        }
     });
 
-    // 3. Reveal Animations (Intersection Observer)
+    // 3. Scroll Spy - Active Link Highlighting
+    const sections = document.querySelectorAll('section[id]');
+    
+    const scrollSpy = () => {
+        const scrollY = window.pageYOffset;
+        
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 100;
+            const sectionId = current.getAttribute('id');
+            
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.add('active');
+            } else {
+                document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.remove('active');
+            }
+        });
+    };
+    window.addEventListener('scroll', scrollSpy);
+
+    // 4. Reveal Animations (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // If it contains a counter, trigger it
-                const counter = entry.target.querySelector('.counter');
-                if (counter) animateCounter(counter);
             }
         });
     }, { threshold: 0.1 });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // 4. Counter Animation
-    function animateCounter(counter) {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const speed = target / 200;
-
-        if (count < target) {
-            counter.innerText = Math.ceil(count + speed);
-            setTimeout(() => animateCounter(counter), 10);
-        } else {
-            counter.innerText = target + "+";
-        }
-    }
-
-    // 5. Smooth Scroll for Navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // 6. Form Submission (Mock Feedback)
+    // 5. Form Submission (Mock Feedback)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -120,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalText = btn.innerText;
             
             btn.innerText = 'Message Sent!';
-            btn.style.background = '#059669'; // Green success
+            btn.style.background = '#10B981';
             contactForm.reset();
 
             setTimeout(() => {
