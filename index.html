@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varshita Seetamraju | Portfolio</title>
+    <meta name="description" content="Personal portfolio of Seetamraju Naga Varshita, Computer Science Student and Aspiring Web Developer.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Varshita.</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="profile-img-container reveal">
+                <img src="profile.jpg" alt="Seetamraju Naga Varshita" class="profile-img" onerror="this.src='https://via.placeholder.com/200/00f2fe/ffffff?text=Varshita'">
+            </div>
+            <h1 class="reveal">Seetamraju Naga Varshita</h1>
+            <div class="typing-text reveal" id="typingText"></div>
+            <p class="hero-intro reveal">I build elegant digital experiences with code. Passionate about Web Technologies and Artificial Intelligence.</p>
+            <div class="btn-group reveal">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="#" class="btn btn-secondary">Download Resume <i class="fas fa-download"></i></a>
+            </div>
+            <div class="social-links reveal">
+                <a href="https://www.linkedin.com/in/varshita-seetamraju-b10456364" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/varshita-s" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:snvarshita18@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-container">
+            <div class="about-text glass-card detail-item reveal">
+                <h3>Who am I?</h3>
+                <p>I am a passionate Computer Science student interested in web development and emerging technologies. I enjoy building websites, learning new programming skills, and working on innovative projects. Currently entering my 3rd year of B.Tech at J.B. Institute of Engineering and Technology.</p>
+            </div>
+            <div class="about-details">
+                <div class="glass-card detail-item reveal">
+                    <h4>Career Objective</h4>
+                    <p>To leverage my technical skills and passion for innovation to contribute to impactful projects in a professional environment.</p>
+                </div>
+                <div class="glass-card detail-item reveal">
+                    <h4>Interests & Strengths</h4>
+                    <p><strong>Interests:</strong> UI/UX Design, Artificial Intelligence, Web Dev.<br>
+                    <strong>Strengths:</strong> Quick Learner, Problem Solver, Team Player.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <h2 class="section-title reveal">My Education</h2>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>B.Tech - CSE</h3>
+                    <span>2022 - Present</span>
+                    <p><strong>J.B. Institute of Engineering and Technology (JBIET)</strong></p>
+                    <p>Current Status: 3rd Year</p>
+                    <div class="timeline-subjects">
+                        <span class="subject-tag">Data Structures</span>
+                        <span class="subject-tag">Algorithms</span>
+                        <span class="subject-tag">OOP</span>
+                        <span class="subject-tag">DBMS</span>
+                        <span class="subject-tag">Web Technologies</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>Intermediate</h3>
+                    <span>2020 - 2022</span>
+                    <p><strong>Resonance Junior College</strong></p>
+                    <p>MPC Stream</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>SSC</h3>
+                    <span>Completed 2020</span>
+                    <p><strong>Geetanjali High School</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="section-title reveal">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card glass-card reveal">
+                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <h3>Programming</h3>
+                <ul class="skill-list">
+                    <li class="skill-item">C</li>
+                    <li class="skill-item">Python</li>
+                    <li class="skill-item">Java</li>
+                    <li class="skill-item">DSA</li>
+                    <li class="skill-item">AI</li>
+                </ul>
+            </div>
+            <div class="skill-card glass-card reveal">
+                <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Web Development</h3>
+                <ul class="skill-list">
+                    <li class="skill-item">HTML</li>
+                    <li class="skill-item">CSS</li>
+                    <li class="skill-item">JavaScript</li>
+                    <li class="skill-item">React.js</li>
+                </ul>
+            </div>
+            <div class="skill-card glass-card reveal">
+                <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                <h3>Tools & Soft Skills</h3>
+                <ul class="skill-list">
+                    <li class="skill-item">GitHub</li>
+                    <li class="skill-item">Teamwork</li>
+                    <li class="skill-item">Communication</li>
+                    <li class="skill-item">Problem Solving</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="section-title reveal">Recent Projects</h2>
+        <div class="project-container">
+            <div class="project-card glass-card reveal">
+                <div class="project-img">
+                    <i class="fab fa-python"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Currency Converter <span class="badge">Python</span></h3>
+                    <p>Developed a Python-based Currency Converter application that enables users to convert values between different currencies using real-time/static exchange rates.</p>
+                    <div class="project-tech">
+                        <span class="subject-tag">Python</span>
+                        <span class="subject-tag">GUI</span>
+                        <span class="subject-tag">API</span>
+                    </div>
+                    <div class="project-btns">
+                        <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="btn btn-secondary">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title reveal">Get In Touch</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <a href="mailto:snvarshita18@gmail.com" class="contact-card glass-card reveal">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>snvarshita18@gmail.com</p>
+                    </div>
+                </a>
+                <a href="http://www.linkedin.com/in/varshita-seetamraju-b10456364" target="_blank" class="contact-card glass-card reveal">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <p>Varshita Seetamraju</p>
+                    </div>
+                </a>
+                <div class="contact-card glass-card reveal">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Hyderabad, Telangana</p>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="contactForm" class="contact-form glass-card reveal">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Your message here..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2 class="logo">Varshita.</h2>
+                <p>Building the future, one line of code at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/varshita-seetamraju-b10456364" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/varshita-s" target="_blank">GitHub</a></li>
+                    <li><a href="mailto:snvarshita18@gmail.com">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Seetamraju Naga Varshita. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
